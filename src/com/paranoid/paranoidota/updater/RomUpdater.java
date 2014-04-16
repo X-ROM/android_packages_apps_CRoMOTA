@@ -24,19 +24,19 @@ import android.content.Context;
 import com.paranoid.paranoidota.R;
 import com.paranoid.paranoidota.Utils;
 import com.paranoid.paranoidota.Version;
+import com.paranoid.paranoidota.updater.server.CRomServer;
 import com.paranoid.paranoidota.updater.server.GooServer;
-import com.paranoid.paranoidota.updater.server.PaServer;
 
 public class RomUpdater extends Updater {
 
     public RomUpdater(Context context, boolean fromAlarm) {
-        super(context, new Server[] { new PaServer(), new GooServer(context, true) }, fromAlarm);
+        super(context, new Server[] { new CRomServer() }, fromAlarm);
     }
 
     @Override
     public Version getVersion() {
-        String version = getDevice() + "-" + Utils.getProp(Utils.MOD_VERSION);
-        return new Version(version);
+        String version = Utils.getProp(Utils.MOD_VERSION) + "-" + getDevice();
+        return new Version(version, false);
     }
 
     @Override
