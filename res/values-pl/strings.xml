@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
   Copyright 2014 ParanoidAndroid Project
 
@@ -21,7 +21,7 @@
 <resources>
 
     <!-- GENERAL -->
-    <string name="app_name">Paranoid OTA</string>
+    <string name="app_name">C-RoM OTA</string>
     <string name="title_checking">Sprawdzanie...</string>
     <string name="check_for_updates">Sprawdź</string>
     <string name="no_additional_info">Brak dodatkowych informacji</string>
@@ -34,7 +34,7 @@
     <string name="rom_new_version">Znaleziono aktualizacje ROM\'u!</string>
     <string name="gapps_new_version">Znaleziono aktualizacje Google apps!</string>
     <string name="no_updates">Brak aktualizacji</string>
-    <string name="system_update_found">Nowa aktualizacja jest gotowa do pobrania.\nSprawdź nowe powiadomienia. Przekierują cie one do ParanoidOTA dzięki której będziesz mógł pobrać i/lub zainstalować aktualizacje.\n\nAktualizacja(e) znaleziona(e):\n%1$s</string>
+    <string name="system_update_found">Nowa aktualizacja jest gotowa do pobrania.\nSprawdź nowe powiadomienia. Przekierują cie one do C-RoM OTA dzięki której będziesz mógł pobrać i/lub zainstalować aktualizacje.\n\nAktualizacja(e) znaleziona(e):\n%1$s</string>
 
     <!-- SYSTEM -->
     <string name="system_title">Informacje o systemie</string>
