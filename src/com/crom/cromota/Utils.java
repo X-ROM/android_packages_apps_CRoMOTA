@@ -50,15 +50,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.paranoid.paranoidota.helpers.SettingsHelper;
-import com.paranoid.paranoidota.updater.Updater;
-import com.paranoid.paranoidota.updater.Updater.PackageInfo;
+import com.crom.cromota.helpers.SettingsHelper;
+import com.crom.cromota.updater.Updater;
+import com.crom.cromota.updater.Updater.PackageInfo;
 
 public class Utils {
 
-    public static final String FILES_INFO = "com.paranoid.paranoidota.Utils.FILES_INFO";
-    public static final String CHECK_DOWNLOADS_FINISHED = "com.paranoid.paranoidota.Utils.CHECK_DOWNLOADS_FINISHED";
-    public static final String CHECK_DOWNLOADS_ID = "com.paranoid.paranoidota.Utils.CHECK_DOWNLOADS_ID";
+    public static final String FILES_INFO = "com.crom.cromota.Utils.FILES_INFO";
+    public static final String CHECK_DOWNLOADS_FINISHED = "com.crom.cromota.Utils.CHECK_DOWNLOADS_FINISHED";
+    public static final String CHECK_DOWNLOADS_ID = "com.crom.cromota.Utils.CHECK_DOWNLOADS_ID";
     public static final String MOD_VERSION = "ro.crom.version";
     public static final int ROM_ALARM_ID = 122303221;
     public static final int GAPPS_ALARM_ID = 122303222;
