@@ -38,7 +38,7 @@ public class IOUtils {
             .getAbsolutePath();
 
     public static final String DOWNLOAD_PATH = new File(Environment
-            .getExternalStorageDirectory(), "paranoidota/").getAbsolutePath();
+            .getExternalStorageDirectory(), "cromota/").getAbsolutePath();
 
     private static final String PREFIX = "pa_";
     private static final String SUFFIX = ".zip";
