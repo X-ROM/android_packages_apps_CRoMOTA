@@ -64,7 +64,7 @@
         android:layout_marginTop="@dimen/card_separator_padding"
         android:background="@color/card_border" />
 
-    <com.com.comota.widget.Item
+    <com.crom.cromota.widget.Item
         android:id="@+id/cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
