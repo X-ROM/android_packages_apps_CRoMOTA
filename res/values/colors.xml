@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Copyright 2014 ParanoidAndroid Project
-  Copyright 2014 C-RoM Project
 
-  This file is part of C-RoM OTA.
+  This file is part of Paranoid OTA.
 
   Paranoid OTA is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -16,18 +15,18 @@
   GNU General Public License for more details.
 
   You should have received a copy of the GNU General Public License
-  along with C-RoM OTA.  If not, see <http://www.gnu.org/licenses/>.
+  along with Paranoid OTA.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <resources>
-    <color name="app_background">#ff000000</color>
-    <color name="text_light">#66ffffff</color>
-    <color name="card_text">#ffffffff</color>
+    <color name="app_background">#fff3f3f4</color>
+    <color name="text_light">#66000000</color>
+    <color name="card_text">#ff8d8d8d</color>
     <color name="card_text_error">#ffff0000</color>
-    <color name="card_title_text">#ff33b5e5</color>
-    <color name="card_light_text">#ff000000</color>
+    <color name="card_title_text">#ff707070</color>
+    <color name="card_light_text">#ffb5b5b5</color>
     <color name="card_grid_text">#ff707070</color>
     <color name="card_separator">#ffe5e5e5</color>
     <color name="card_border">#ffdedede</color>
-    <color name="card_background">#ff000000</color>
+    <color name="card_background">#ffffffff</color>
 </resources>
