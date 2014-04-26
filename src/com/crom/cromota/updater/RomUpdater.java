@@ -47,10 +47,6 @@ public class RomUpdater extends Updater {
     @Override
     public String getDevice() {
         String device = Utils.getProp(PROPERTY_DEVICE);
-        if (device == null || device.isEmpty()) {
-            device = Utils.getProp(PROPERTY_DEVICE_EXT);
-            device = Utils.translateDeviceName(getContext(), device);
-        }
         return device == null ? "" : device.toLowerCase();
     }
 

@@ -65,8 +65,7 @@ public abstract class Updater implements Response.Listener<JSONObject>, Response
         public boolean isGapps();
     }
 
-    public static final String PROPERTY_DEVICE = "ro.pa.device";
-    public static final String PROPERTY_DEVICE_EXT = "ro.product.device";
+    public static final String PROPERTY_DEVICE = "ro.crom.device";
 
     public static final int NOTIFICATION_ID = 122303225;
 
