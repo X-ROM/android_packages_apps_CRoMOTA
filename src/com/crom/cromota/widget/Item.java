@@ -19,6 +19,7 @@
 
 package com.crom.cromota.widget;
 
+import android.graphics.PorterDuff;
 import com.crom.cromota.R;
 
 import android.content.Context;
@@ -41,11 +42,12 @@ public class Item extends LinearLayout {
         public void onClick(int id);
     }
 
+    private ImageView mIconView;
     private TextView mTitleView;
-    private int mDownColor;
-    private int mDownTextColor;
     private OnItemClickListener mItemClickListener;
     private ColorStateList mDefaultColors;
+    private int mPressedColor;
+    private int mIconActiveColor;
 
     public Item(final Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -64,9 +66,6 @@ public class Item extends LinearLayout {
             icon = d;
         }
 
-        mDownColor = a.getColor(R.styleable.Item_itemDownColor, android.R.color.holo_blue_dark);
-        mDownTextColor = a.getColor(R.styleable.Item_itemDownTextColor, android.R.color.white);
-
         a.recycle();
 
         LayoutInflater inflater = (LayoutInflater) context
@@ -76,9 +75,14 @@ public class Item extends LinearLayout {
         mTitleView = (TextView) view.findViewById(R.id.title);
         mTitleView.setText(title);
         mDefaultColors = mTitleView.getTextColors();
+        mPressedColor = context.getResources().getColor(R.color.item_pressed);
+        mIconActiveColor = context.getResources().getColor(R.color.item_action);
+        if (icon != null) {
+            icon.setColorFilter(mIconActiveColor, PorterDuff.Mode.SRC_ATOP);
+        }
 
-        ImageView iView = (ImageView) view.findViewById(R.id.icon);
-        iView.setImageDrawable(icon);
+        mIconView = (ImageView) view.findViewById(R.id.icon);
+        mIconView.setImageDrawable(icon);
 
         setOnTouchListener(new OnTouchListener() {
             @Override
@@ -92,8 +96,7 @@ public class Item extends LinearLayout {
 
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        setBackgroundColor(mDownColor);
-                        mTitleView.setTextColor(mDownTextColor);
+                        setBackgroundColor(mPressedColor);
                         break;
                     case MotionEvent.ACTION_UP:
                         setBackgroundColor(context.getResources().getColor(
@@ -124,10 +127,13 @@ public class Item extends LinearLayout {
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
-        if (mTitleView != null) {
+        if (mIconView != null && mTitleView != null) {
+            Drawable icon = mIconView.getDrawable();
             if (enabled) {
+                icon.setColorFilter(mIconActiveColor, PorterDuff.Mode.SRC_ATOP);
                 mTitleView.setTextColor(mDefaultColors);
             } else {
+                icon.clearColorFilter();
                 mTitleView.setTextColor(R.color.card_text);
             }
         }
