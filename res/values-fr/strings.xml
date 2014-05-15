@@ -88,6 +88,7 @@
     <string name="alert_reboot_one_message">Votre appareil va redémarrer et installer la mise à jour.</string>
     <string name="alert_reboot_more_message">Votre appareil va redémarrer et installer les mises à jour.</string>
     <string name="alert_reboot_now">Installer maintenant</string>
+    <string name="file_not_found">Impossible d\'ajouter le fichier</string>
 
     <!-- CHANGELOG -->
     <string name="changelog">Changelog</string>
