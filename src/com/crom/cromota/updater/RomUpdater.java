@@ -29,14 +29,26 @@ import com.crom.cromota.updater.server.GooServer;
 
 public class RomUpdater extends Updater {
 
+    public static String getVersionString(Context context) {
+        return getDevice(context) + "-" + Utils.getProp(Utils.MOD_VERSION);
+    }
+
+    private static String getDevice(Context context) {
+        String device = Utils.getProp(PROPERTY_DEVICE);
+        if (device == null || device.isEmpty()) {
+            device = Utils.getProp(PROPERTY_DEVICE_EXT);
+            device = Utils.translateDeviceName(context, device);
+        }
+        return device == null ? "" : device.toLowerCase();
+    }
+
     public RomUpdater(Context context, boolean fromAlarm) {
         super(context, new Server[] { new CRomServer() }, fromAlarm);
     }
 
     @Override
     public Version getVersion() {
-        String version = Utils.getProp(Utils.MOD_VERSION) + "-" + getDevice();
-        return new Version(version, false);
+        return new Version(getVersionString(getContext()));
     }
 
     @Override
@@ -46,8 +58,7 @@ public class RomUpdater extends Updater {
 
     @Override
     public String getDevice() {
-        String device = Utils.getProp(PROPERTY_DEVICE);
-        return device == null ? "" : device.toLowerCase();
+        return getDevice(getContext());
     }
 
     @Override

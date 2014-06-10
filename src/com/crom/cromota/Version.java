@@ -46,7 +46,7 @@ import java.io.Serializable;
 public class Version implements Serializable {
 
     private final String[] STATIC_REMOVE = { ".zip", "pa_", "C-RoM-KK-v" };
-    private final String[] PHASES = { "ALPHA", "BETA", "RELEASE CANDIDATE", "GOLD" };
+    private final String[] PHASES = { "ALPHA", "BETA", "RC", "" };
 
     private static final String SEPARATOR = "-";
 
@@ -170,18 +170,18 @@ public class Version implements Serializable {
     }
 
     public String toString() {
-        return toString(true, false);
+        return toString(true);
     }
 
-    public String toString(boolean showDevice, boolean separateMaintenance) {
-        return (showDevice ? mDevice + "-" : "")
+    public String toString(boolean showDevice) {
+        return (showDevice ? mDevice + " " : "")
                 + mMajor
                 + "."
                 + mMinor
-                + (mMaintenance > 0 ? (separateMaintenance ? "." : "")
+                + (mMaintenance > 0 ? "."
                         + mMaintenance : "")
-                + (mPhase != GOLD ? "-" + getPhaseName() + mPhaseNumber : "")
-                + "-" + mDate;
+                + (mPhase != GOLD ? " " + getPhaseName() + mPhaseNumber : "")
+                + " (" + mDate + ")";
     }
 
     public static Version fromGapps(String platform, String version) {
