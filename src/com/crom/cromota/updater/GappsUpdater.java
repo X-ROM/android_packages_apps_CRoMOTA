@@ -47,7 +47,7 @@ public class GappsUpdater extends Updater {
     public GappsUpdater(Context context, boolean fromAlarm) {
         super(context, new Server[] { new GooServer(context, false) }, fromAlarm);
 
-        mRomVersion = new Version(RomUpdater.getVersionString(context));
+        mRomVersion = new Version(RomUpdater.getVersionString(), true);
 
         File file = new File(PROPERTIES_FILE);
         if (file.exists()) {
